@@ -57,8 +57,17 @@ $config = [
             'loginUrl'=>['/user/sign-in/login'],
             'enableAutoLogin' => true,
             'as afterLogin' => 'common\behaviors\LoginTimestampBehavior'
-        ]
-    ]
+        ],
+
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@vendor/davidjeddy/yii2-pieces-theme/src',
+                ],
+            ],
+        ],
+    ],
+    'layout' => '@vendor/davidjeddy/yii2-pieces-theme/src/layouts/_clear.php'
 ];
 
 if (YII_ENV_DEV) {
