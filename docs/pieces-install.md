@@ -4,6 +4,7 @@ apt-get install wget -y
 wget https://getcomposer.org/composer.phar
 php composer.phar global require "fxp/composer-asset-plugin"
 php composer.phar install --ansi --profile --prefer-source -o -vvv
+#php composer.phar install --ansi --profile --prefer-dist -o -vvv
 php console/yii app/setup --interactive=0
 php console/yii rbac-migrate --interactive=0
 cd ~/
@@ -24,3 +25,4 @@ node -v
 cd /app
 npm install
 npm run build
+php ./console/yii migrate/up --migrationPath=@vendor/davidjeddy/yii2-article-category/migration

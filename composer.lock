@@ -4,8 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae2b5f24d0465690f772b64c387d2785",
+    "content-hash": "8bc1ba0ac9e4d04530f3e7c9e88e58ce",
     "packages": [
+        {
+            "name": "2amigos/yii2-disqus-widget",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-disqus-widget.git",
+                "reference": "5bcfe9e3ce837ddbb5ff61fdad08da6436e72dea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-disqus-widget/zipball/5bcfe9e3ce837ddbb5ff61fdad08da6436e72dea",
+                "reference": "5bcfe9e3ce837ddbb5ff61fdad08da6436e72dea",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\disqus\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "DISQUS widget for Yii2.",
+            "homepage": "http://yiiwheels.com/extension/disqus-widget",
+            "keywords": [
+                "2amigos",
+                "disqus",
+                "extension",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2015-03-19T11:20:02+00:00"
+        },
         {
             "name": "asofter/yii2-imperavi-redactor",
             "version": "dev-master",
@@ -735,6 +791,140 @@
                 "markdown-extra"
             ],
             "time": "2016-09-14T20:40:20+00:00"
+        },
+        {
+            "name": "cybercog/yii2-google-analytics",
+            "version": "v0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cybercog/yii2-google-analytics.git",
+                "reference": "6331e592ea8ce89a201781e563a4cc8526045b09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cybercog/yii2-google-analytics/zipball/6331e592ea8ce89a201781e563a4cc8526045b09",
+                "reference": "6331e592ea8ce89a201781e563a4cc8526045b09",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.11"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "cybercog\\yii\\googleanalytics\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Komarev",
+                    "email": "ell@cybercog.su"
+                }
+            ],
+            "description": "Google Analytics Widget for the Yii2 framework",
+            "keywords": [
+                "analytics",
+                "google",
+                "yii2"
+            ],
+            "time": "2016-06-23T20:28:23+00:00"
+        },
+        {
+            "name": "davidjeddy/yii2-article-category",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davidjeddy/yii2-article-category.git",
+                "reference": "7ec31fc72d3648fe17ae4780a757007b34afb949"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davidjeddy/yii2-article-category/zipball/7ec31fc72d3648fe17ae4780a757007b34afb949",
+                "reference": "7ec31fc72d3648fe17ae4780a757007b34afb949",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "yiisoft/yii2": "~2",
+                "yiisoft/yii2-bootstrap": "~2"
+            },
+            "require-dev": {
+                "codeception/codeception": "~2",
+                "yiisoft/yii2-codeception": "~2",
+                "yiisoft/yii2-debug": "~2",
+                "yiisoft/yii2-faker": "~2",
+                "yiisoft/yii2-gii": "~2"
+            },
+            "type": "module",
+            "autoload": {
+                "psr-4": {
+                    "davidjeddy\\articlecategory\\": "/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David J Eddy",
+                    "email": "me@davidjeddy.com",
+                    "homepage": "https://github.com/davidjeddy/yii2-article-category",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Multi level article category module",
+            "keywords": [
+                "framework",
+                "module",
+                "yii2"
+            ],
+            "time": "2017-05-13 01:16:44"
+        },
+        {
+            "name": "davidjeddy/yii2-pieces-theme",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/davidjeddy/yii2-pieces-theme.git",
+                "reference": "581aa86d9d589c5c536cb34e4109c3ced2b73854"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/davidjeddy/yii2-pieces-theme/zipball/581aa86d9d589c5c536cb34e4109c3ced2b73854",
+                "reference": "581aa86d9d589c5c536cb34e4109c3ced2b73854",
+                "shasum": ""
+            },
+            "require": {
+                "cybercog/yii2-google-analytics": "~0.2"
+            },
+            "type": "theme",
+            "autoload": {
+                "psr-4": {
+                    "davidjeddy\\pieces\\": "/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "David J Eddy",
+                    "email": "me@davidjdeddy.com"
+                }
+            ],
+            "description": "Pieces Theme",
+            "keywords": [
+                "deavidjeddy",
+                "theme",
+                "yii2"
+            ],
+            "time": "2017-05-01 01:18:54"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -4824,7 +5014,9 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "asofter/yii2-imperavi-redactor": 20,
-        "trntv/cheatsheet": 20
+        "trntv/cheatsheet": 20,
+        "davidjeddy/yii2-article-category": 20,
+        "davidjeddy/yii2-pieces-theme": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
