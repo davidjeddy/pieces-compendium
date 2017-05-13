@@ -76,5 +76,10 @@
     "github-oauth": {
       "github.com": "96ff390229af38666e32bee817afdc6e7977d8cc"
     }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "./vendor/davidjeddy/yii2-pieces-theme/install.sh"
+    ]
   }
 }
