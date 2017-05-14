@@ -1,24 +1,13 @@
 <?php
+
+use dosamigos\disqus\Comments;
+
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('frontend', 'Articles'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="content">
     <article class="article-item">
-        <h1><?php echo $model->title ?></h1>
-
-        <?php if ($model->thumbnail_path): ?>
-            <?php echo \yii\helpers\Html::img(
-                Yii::$app->glide->createSignedUrl([
-                    'glide/index',
-                    'path' => $model->thumbnail_path,
-                    'w' => 200
-                ], true),
-                ['class' => 'article-thumb img-rounded pull-left']
-            ) ?>
-        <?php endif; ?>
 
         <?php echo $model->body ?>
 
@@ -36,6 +25,24 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-
     </article>
+
+    <?php
+    if ($model->category_id === 1) {
+        $prev = $model->getNextOrPrev($model->category_id, $model->published_at, 'DESC', 'published_at');
+        $next = $model->getNextOrPrev($model->category_id, $model->published_at, 'ASC',  'published_at');
+        ?>
+
+        <div class="row">
+            <div class="col-xs-3 text-left"><?php if (!empty($prev)) { ?><h2><a href="<?php echo ($prev['slug'] ? $prev['slug'] : NULL); ?>" class="prevnext">Prev.</a></h2><?php } ?></div>
+            <div class="col-xs-6 text-center"></div>
+            <div class="col-xs-3 text-right"><?php if (!empty($next)) { ?><h2><a href="<?php echo ($next['slug'] ? $next['slug'] : NULL); ?>" class="prevnext">Next</a></h2><?php } ?></div>
+        </div>
+    <?php }; ?>
+
+    <?php echo Comments::widget([
+        // see http://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
+        'identifier' => env('FRONTEND_HOST_INFO') .'/' . $_SERVER['REQUEST_URI'],
+        'shortname'  => 'pieces-compendium',
+    ]); ?>
 </div>

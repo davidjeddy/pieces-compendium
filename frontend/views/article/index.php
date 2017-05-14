@@ -1,6 +1,11 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = Yii::t('frontend', 'Articles')
+/* @var $dataProvider yii\data\ActiveDataProvider */
+$this->title = env('APP_NAME' ) . ': ' . Yii::t('frontend',
+    \davidjeddy\articlecategory\models\ArticleCategory::findOne([
+            'id' => \Yii::$app->request->queryParams['category_id']
+    ])->title
+);
 ?>
 <div id="article-index">
     <h1><?php echo Yii::t('frontend', 'Articles') ?></h1>
@@ -9,6 +14,7 @@ $this->title = Yii::t('frontend', 'Articles')
         'pager'=>[
             'hideOnSinglePage'=>true,
         ],
-        'itemView'=>'_item'
-    ])?>
+        'itemView'=>'_item',
+        'showOnEmpty'=>false,
+    ]); ?>
 </div>
