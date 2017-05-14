@@ -174,4 +174,36 @@ class Article extends ActiveRecord
     {
         return $this->hasMany(ArticleAttachment::className(), ['article_id' => 'id']);
     }
+
+    /* custom methods */
+
+    /**
+     * [getNextOrPrev description]
+     *
+     * @param  [type] $category_id  Category ID of the current article
+     * @param  [type] $published_at Published date of the current article
+     * @param  string $col          column to sort the returned data set by
+     * @param  [type] $direction    ASC = next, DESC = prev.
+     * @return [type]               AR object
+     */
+    public function getNextOrPrev($category_id = 0, $published_at = 0, $direction = 'DESC', $col = 'id')
+    {
+        $returnRecord = NULL;
+
+        $records = \common\models\Article::find()
+            ->andWhere(['status' => 1])
+            ->andWhere(['<=', 'published_at', (int)time()])
+            ->andWhere(['category_id' => $category_id])
+            ->orderBy($col . ' '. $direction)
+            ->asArray()
+            ->all();
+
+        foreach ($records as $i => $r) {
+            if ($r['published_at'] == $published_at && isset($records[$i+1])) {
+                $returnRecord = $records[$i+1] ?: NULL;
+            }
+        }
+
+        return $returnRecord;
+    }
 }
