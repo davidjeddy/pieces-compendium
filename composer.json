@@ -50,7 +50,7 @@
     "symfony/process": "^3.0",
 
     "davidjeddy/yii2-article-category": "dev-master@dev",
-    "davidjeddy/yii2-pieces-theme": "dev-master@dev",
+    "davidjeddy/yii2-pieces-theme": "^1",
     "2amigos/yii2-disqus-widget" : "~1.0"
   },
   "require-dev": {
